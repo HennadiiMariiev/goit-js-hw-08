@@ -17,8 +17,7 @@ function onGalleryImageClick(event) {
 
     if(event.target.nodeName !== "IMG")
         return;
-
-    removeSrcOfImageTag();    
+ 
     lightboxEl.classList.toggle('is-open');
     window.addEventListener('keydown', onLightboxKeyPress);
 
@@ -30,12 +29,16 @@ function onGalleryImageClick(event) {
 
 function onCloseButtonClick() {
     lightboxEl.classList.toggle('is-open');
+    
+    removeSrcOfImageTag();   
+    
     window.removeEventListener('keydown', onLightboxKeyPress);
 }
 
 function onOverlayClick(event) {
     if(event.target.classList.contains('.lightbox__overlay'))
         event.stopPropagation();
+    
     onCloseButtonClick();
 }
 
