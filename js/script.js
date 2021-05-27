@@ -45,13 +45,13 @@ function onOverlayClick(event) {
 function onLightboxKeyPress(event) {
     const currentImageIndex = galleryImages.findIndex(el => el.original === lightboxImageEl.src);
 
-    if(event.key === 'ArrowRight') {
+    if(event.keyCode === 39) {
         onArrowRightKeyPress(currentImageIndex);
     }   
-    if(event.key === 'ArrowLeft') {
+    if(event.keyCode === 37) {
         onArrowLeftKeyPress(currentImageIndex);
     }
-    if(event.key === 'Escape') {
+    if(event.keyCode === 27) {
         onCloseButtonClick();
     }
 }
